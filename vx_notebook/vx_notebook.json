@@ -1,0 +1,25 @@
+{
+    "attachment_folder": "vx_attachments",
+    "config_mgr": "vx.vnotex",
+    "created_time": "2021-11-07T06:49:57Z",
+    "description": "",
+    "extra_configs": {
+    },
+    "history": [
+        {
+            "last_accessed_time": "2021-11-07T07:06:32Z",
+            "line_number": -1,
+            "path": "CCNA/1-22_EXAM/note.md"
+        },
+        {
+            "last_accessed_time": "2021-11-07T07:06:32Z",
+            "line_number": 4,
+            "path": "CCNA/1-22_EXAM/PART2.md"
+        }
+    ],
+    "image_folder": "vx_images",
+    "name": "WILLIS",
+    "tag_graph": "",
+    "version": 3,
+    "version_controller": "dummy.vnotex"
+}
