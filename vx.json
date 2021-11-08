@@ -5,6 +5,9 @@
     "folders": [
         {
             "name": "CCNA"
+        },
+        {
+            "name": "OVERTHEWIRE"
         }
     ],
     "id": "1",

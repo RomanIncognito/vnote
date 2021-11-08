@@ -33,3 +33,25 @@ If the prefix length is /P, use these rules:
 2. Change the rest of the bits to 0. 
 
 (A prefix length is a multiple of 4)
+
+IPv6 does not use any concept like the classful network concept used by IPv4.
+
+Addressing: global unicast(similar to public in v4) OR unique local IPv6 (similar to private v4)
+
+Global routing prefix - reserved block of ipv6 address.
+
+Global unicast 2 or 3 (originally); all not otherwise reserved (today)
+Unique local FD
+Multicast FF
+Link local FE80
+
+**enabling IPV6 in router!!!!!!!!!!**
+>config t
+>ipv6 unicast-routing
+>do sh ipv6 int br
+>interface Gi0/0/0
+>ipv6 address AA::1/64
+>no shutdown
+>do show ipv6 int br
+
+IPV6 host 64 padded by zeros from the right + 48(MAC modified) + 16 bits (FFFE) injected right in the middle of MAC 
