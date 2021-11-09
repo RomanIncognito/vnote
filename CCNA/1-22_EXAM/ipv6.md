@@ -40,12 +40,19 @@ Addressing: global unicast(similar to public in v4) OR unique local IPv6 (simila
 
 Global routing prefix - reserved block of ipv6 address.
 
+**IPV6 TYPES**
 Global unicast 2 or 3 (originally); all not otherwise reserved (today)
-Unique local FD
-Multicast FF
-Link local FE80
+Unique local unicast (unique local addresses begin with hex FD) 
+All hosts multicast FF02::1
+All routers multicast FF02::2
+Routing protocol multicasts Various
+Solicited-node multicast FF02::1:FF /104
+Link local FE80 (special address that is used when protocol's messages needs to stay within the local LAN. Can't be routed through router)
+
+
 
 **enabling IPV6 in router!!!!!!!!!!**
+```
 >config t
 >ipv6 unicast-routing
 >do sh ipv6 int br
@@ -53,5 +60,48 @@ Link local FE80
 >ipv6 address AA::1/64
 >no shutdown
 >do show ipv6 int br
+```
 
-IPV6 host 64 padded by zeros from the right + 48(MAC modified) + 16 bits (FFFE) injected right in the middle of MAC 
+Genereting EUI-64 IPV6 address(from left to right):
+1) First goes 64 bits of the IPV6 with padded 0s , if nessessary to make complete 64 bits. 
+2) 7-th bit (OR 3-D bit of the 2-D hex digit in  first quartet ) of MAC address is inverted.
+3) Additional static 16 bits in the hex form FFFE is inserted/ijected in the middle of the MAC.
+
+
+IPV6 can be configured:
+-statically, along with the prefix length, default router, and  (DNS) IPv6 addresses. 
+-dynamically:
+    1.using either Dynamic Host Configuration Protocol (DHCP) or 
+    2. a built-in IPv6 mechanism called Stateless Address Autoconfiguration (SLAAC).
+    
+**Configuring router's interface using EUI-64**
+```
+ipv6 unicast-routing
+interface Gi0/0
+ipv6 address 2001:DB8:1111:1::/64 eui-64  # using prefix only. NOT FULL IPV6
+do show ipv6 interface br
+```
+
+When you use EUI-64, the address value in the ipv6 address command should be the prefix, not the full 128-bit IPv6 address.
+
+Cisco routers support two ways for the router interface to dynamically learn an IPv6 address to use:
+■ Stateful DHCP (command is **ipv6 address dhcp**)
+■ Stateless Address Autoconfiguration (SLAAC) (command is **ipv6 address autoconfig)**
+
+Cisco uses such tecnique to genereate link-local ipv6 address
+first 64 bits start with FE80 and extra 0s padded from the right to complete full 64 
+PLUS EUI-64 portion
+
+multicast is the message that is sent to group of destination computers simultaneously. 
+
+Anycast is the message that is sent to one out of group of computers that is calculated as the most closest from the requester. 
+Used to reduce latency and as a load-balance teknique. 
+
+**configure anycast on the router:**
+```
+>interface gigabitEthernet 0/0
+>R1(config-if)# ipv6 address 2001:1:1:1::1/64     #unicast
+>R1(config-if)# ipv6 address 2001:1:1:2::99/128 anycast    #anycast
+```
+
+OSPFv3 uses IPv6 multicast addresses FF02::5 and FF02::6
