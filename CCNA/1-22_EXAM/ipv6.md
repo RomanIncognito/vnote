@@ -105,3 +105,59 @@ Used to reduce latency and as a load-balance teknique.
 ```
 
 OSPFv3 uses IPv6 multicast addresses FF02::5 and FF02::6
+
+**------------------------------IPV6 ROUTING--------------------------------**
+
+routes : 
+1) connected(represent route connected to the interface ) and local(host route for specific address with prefic 128). 
+2) static 
+3) dynamic with help of OSPF
+
+To add static route
+```
+> conf t
+> ipv6 unicast-routing
+>interface Gi0/1
+>ipv6 route 2001:DB8:1111:2::/64 <some_interface> OR ipv6 route 2001:DB8:1111:2::/64 <next_hop_id>
+```
+When using link local address for routing , both link-local ip AND interface name must ne used
+>ipv6 route 2001:db8:1111:2::/64 ***S0/0/0 FE80::FF:FE00:2***
+
+The default route is the route used by router to forward packet in case whenmatches no other ipv6 routes.
+If default route is NOT setup, packets are discarded.
+
+ipv6 route ::/0 S0/0/1   # default route has been established
+
+static host routes—that is, a route to a single host IP address.
+`ipv6 route 2001:db8:1111:2::22/128 S0/0/0 FE80::FF:FE00:2`
+
+Floating static route is the route with specificly established by engineer administrative distance in order to alter priority of chosen route 
+in case when more than 1 route exists between 2 nodes. 
+
+Connected routes 0
+Static routes 1
+NDP 2
+EIGRP 90
+OSPF 110
+RIP 120
+Unknown or unbelievable 255
+
+Neighbor Discovery Protocol (NDP), a part of ICMPv6, performs similar to ARP function in IPv4
+Neighbor Solicitation (NS) acts like ARP request in IPV4. The NS message is sent to the solicited-node multicast address.
+Neighbor Advertisement (NA) like an IPv4 ARP Reply. This message lists the sender’s IPv6 and MAC addresses.
+
+Router Solicitation (RS): This message is sent to the “all-IPv6-routers” local-scope multi-cast address of FF02::2
+Router Advertisement (RA): This message, sent by the router, lists many facts, including the link-local IPv6 address of the router.
+
+SLAAC (Stateless Address Autoconfiguration) - IPv6 alternative method (meaning different from DHCP) for IPv6  to dynamically choose an unused IPv6 address. 
+STEPS: 
+1. Learn the IPv6 prefix used on the link, from any router, using NDP RS/RA messages.
+2. Build an address from the prefix plus an interface ID, chosen either by using EUI-64
+rules or as a random value.
+3. Before using the address, first use DAD to make sure that no other host is already using the same address.
+
+
+
+
+
+
