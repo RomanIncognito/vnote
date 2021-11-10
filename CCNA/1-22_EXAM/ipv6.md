@@ -156,7 +156,18 @@ STEPS:
 rules or as a random value.
 3. Before using the address, first use DAD to make sure that no other host is already using the same address.
 
+Independed basic set - bluetooth
 
+LWAP - Light weight access protocol. Controller and AP.
+Core Layer, Distribution and Access Layer(this connected to APs). - This is all distribution system.
+
+To manage access in the system without controller, separate management IP is used.
+
+SDN - software defined networking is a technology aimed to manage network with dynamic configuration. i
+
+ 5246 - control and 5247 - data. 
+ 
+CAPWAP - protocol that allows distant control/config of AP by Wireless controller. 
 
 
 
