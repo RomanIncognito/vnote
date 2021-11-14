@@ -80,6 +80,10 @@ U.S. National Institute of Standards and Technology (NIST) and the U.S. governme
 The Galois/Counter Mode Protocol (GCMP) is a robust authenticated encryption.
 Consists of two algorithms: AES and Galois Message Authentication Code (GMAC).
 
+Short for Wi-Fi Protected Access 2 – Pre-Shared Key, and also called WPA or WPA2 Personal.
+It is a method of securing your network using WPA2 with the use of the optional Pre-Shared Key (PSK) authentication, 
+which was designed for home users without an enterprise authentication server
+
 3 wifi certification: WPA, WPA2, and WPA3.
 WPA based on TKIP. WPA2 - AES and CCMP. WPA3 - AES and GCMP. 
 
