@@ -41,6 +41,7 @@ Addressing: global unicast(similar to public in v4) OR unique local IPv6 (simila
 Global routing prefix - reserved block of ipv6 address.
 
 **IPV6 TYPES**
+![](vx_images/54553393880155.png)
 Global unicast 2 or 3 (originally); all not otherwise reserved (today)
 Unique local unicast (unique local addresses begin with hex FD) 
 All hosts multicast FF02::1
@@ -142,6 +143,11 @@ OSPF 110
 RIP 120
 Unknown or unbelievable 255
 
+The term DAD refers to the function, but the function uses NDP NS and NA messages.
+Basically, a host sends an NS message for its own IPv6 address.
+
+![](vx_images/531452503606000.png)
+
 Neighbor Discovery Protocol (NDP), a part of ICMPv6, performs similar to ARP function in IPv4
 Neighbor Solicitation (NS) acts like ARP request in IPV4. The NS message is sent to the solicited-node multicast address.
 Neighbor Advertisement (NA) like an IPv4 ARP Reply. This message lists the sender’s IPv6 and MAC addresses.
@@ -156,18 +162,8 @@ STEPS:
 rules or as a random value.
 3. Before using the address, first use DAD to make sure that no other host is already using the same address.
 
-Independed basic set - bluetooth
+![](vx_images/253604326931751.png)
 
-LWAP - Light weight access protocol. Controller and AP.
-Core Layer, Distribution and Access Layer(this connected to APs). - This is all distribution system.
-
-To manage access in the system without controller, separate management IP is used.
-
-SDN - software defined networking is a technology aimed to manage network with dynamic configuration. i
-
- 5246 - control and 5247 - data. 
- 
-CAPWAP - protocol that allows distant control/config of AP by Wireless controller. 
 
 
 
