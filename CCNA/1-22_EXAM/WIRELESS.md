@@ -57,8 +57,11 @@ Hash function that combines all the bytes in the message with a secret key and p
 
 The original 802.11 authentication methods: open authentication and WEP.
 
-Wired Equivalent Privacy (WEP) - is a security algorithm for  wireless networks thaCisco controllers support a maximum of 512 WLANs, but only 16 of them can be active-
-ly configured on an AP.t uses RC4 cipher (meaning shared one key is used).
+user ->ap->WLC(open Auth)
+user-------------------------------->Radius server authentication
+
+
+Wired Equivalent Privacy (WEP) - is a security algorithm for  wireless networks thaCisco controllers support a maximum of 512 WLANs, but only 16 of them can be actively configured on an AP.t uses RC4 cipher (meaning shared one key is used).
 WEP key is used to authentication as well by sending challenge phrases to client.
 40 or 104 bits long key. OR 10 or 26 hex digits.
 
@@ -87,6 +90,12 @@ which was designed for home users without an enterprise authentication server
 3 wifi certification: WPA, WPA2, and WPA3.
 WPA based on TKIP. WPA2 - AES and CCMP. WPA3 - AES and GCMP. 
 
+WPA1 = 802.1x + TKIP (temporary key integrity protocol). Data goes through MIC algorithm.
+
+WPA2 = 802.1x + TKIP + CCMP(advanced AES).
+
+WPA3 = 802.1x + TKIP + GCMP.
+
 personal mode and enterprise mode, respectively. With personal mode, a key string must
 be shared or configured on every client and AP before the clients can connect to the wireless
 network.
@@ -113,6 +122,8 @@ DHCP requests, performing client web authentication, and supporting client mobil
 ■ Dynamic interface: Used to connect a VLAN to a WLAN.
 
 Cisco controllers support a maximum of 512 WLANs, but only 16 of them can be actively configured on an AP.
+
+Ports: Console (out-band management. low-level kernel trableshhoting), distribution, service (first setup), Redundancy (setup1 - active active (load balancing), setup 2 - active passive (high availability)).
 
 
 
