@@ -22,19 +22,29 @@
             "path": "OVERTHEWIRE/BANDIT.md"
         },
         {
-            "last_accessed_time": "2021-11-10T20:39:33Z",
+            "last_accessed_time": "2021-11-16T23:29:23Z",
             "line_number": -1,
             "path": "CCNA/1-22_EXAM/1-21.md"
         },
         {
-            "last_accessed_time": "2021-11-15T01:06:44Z",
-            "line_number": 68,
+            "last_accessed_time": "2021-11-16T23:29:23Z",
+            "line_number": 145,
             "path": "CCNA/1-22_EXAM/ipv6.md"
         },
         {
-            "last_accessed_time": "2021-11-15T01:06:44Z",
-            "line_number": 53,
+            "last_accessed_time": "2021-11-16T23:29:23Z",
+            "line_number": 125,
             "path": "CCNA/1-22_EXAM/WIRELESS.md"
+        },
+        {
+            "last_accessed_time": "2021-11-16T23:29:23Z",
+            "line_number": 8,
+            "path": "CCNA/1-22_EXAM/encryption.md"
+        },
+        {
+            "last_accessed_time": "2021-11-16T23:29:23Z",
+            "line_number": 3,
+            "path": "CCNA/1-22_EXAM/ACL.md"
         }
     ],
     "image_folder": "vx_images",
