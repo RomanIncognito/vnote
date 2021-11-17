@@ -3,6 +3,13 @@ Access Control List
 
 netsh interface ipv4 show subinterfaces. 
 
+Multiplexing is a ability of computer to combine and distingvish signals/data in the wire with the help of ports.
+0-1023 - well-known ports, 1024-49151 - users ports
+
+To accomplish reliability, TCP numbers data bytes using the Sequence and Acknowledgment fields in the TCP header.
+
+windowing is an amount of data that receiver can handle at once. 
+
 ACL is  - An Access Control List (ACL) is a set of rules that is usually used to filter network traffic. 
 ACL is sitting in the forwarding path of the packets.
 
@@ -97,7 +104,13 @@ Recommendations:
 ■ Place more specific statements early in the ACL.
 ■ Disable an ACL from its interface (using the no ip access-group interface subcommand) before making changes to the ACL.
 
+keyword "established" is used to allow reverse ptraffic even if there is blockage on that traffic direction. 
 
+access-list 150 permit tcp host 192.168.33.3 host 172.22.242.30 eq www
+access-list 150 deny ip 192.168.33.3 host 172.22.242.23
+access-list 150 deny ip any host 172.22.242.23
+access-list 150 permit ip any host 172.22.242.17
+access-list 150 deny any any 
 
 
 
