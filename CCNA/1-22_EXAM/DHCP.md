@@ -17,3 +17,48 @@ The DHCP relay feature must be configured for any router interface that connects
 To enable DHCP RELAY, use command:
 ip helper-address 172.16.2.11
 
+snooping
+
+```
+ip dhcp snooping
+ip dhcp snooping vla1 # first 2 commands to activate snooping
+int g0/2
+ip dhcp snooping trust
+# also check if vlan 1 is up and running
+show ip dhcp snooping
+show ip dhcp snooping binding
+show ip dhcp snooping database
+```
+
+DAI (Dynamic arp inspection)
+
+```
+ip arp inspection vlan 1
+int gi0/2
+ip arp inspection trust
+show ip arp inspection
+ip arp inspection validate src-mac {dst-mac ip}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
