@@ -1,5 +1,11 @@
 # syslog_ntp
 
+command to activate lldp discovery `lldp run`
+Other usufull command `show lldp neighbors`
+
+
+CDP / LLDP are the layer 2 discovery protocols
+
 Debug command and generate log messages about any related events.
 
 `logging console 7 ` command tells us that the console user will receive severity levels 0–7
@@ -30,6 +36,8 @@ Layer 2 discovery protocols (CDP, LLDP)
 
 UDP port 123 Network time protocol
 
+NTP operating in client and server mode
+
 Set a router clock manually with the command
 ```
 clock set <24-hr time> <day> <month> <year>
@@ -42,24 +50,6 @@ NTP configuration
 `show ntp associations`
 
 LLDP link layer discovery protocol
-
-Types of NAT • Static NAT • Dynamic NAT (where the fun starts) • Overloading (lots of internal addresses to a single outside address)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

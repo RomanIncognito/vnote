@@ -1,4 +1,6 @@
 # DHCP
+DHCP uses UDP port 67 and 68. NOT TCP. 67 - open on server, 68 - open on 
+
 DHCP uses the following four messages between the client and server. (Also, as a way to
 help remember the messages, note that the first letters spell DORA):
 Discover: Sent by the DHCP client to find a willing DHCP server
@@ -17,7 +19,8 @@ The DHCP relay feature must be configured for any router interface that connects
 To enable DHCP RELAY, use command:
 ip helper-address 172.16.2.11
 
-snooping
+snooping. Validates DHCP messages received from untrusted sources and filters out invalid messages.
+prevents unauthorized (rogue) DHCP servers offering IP addresses to DHCP clients.
 
 ```
 ip dhcp snooping
@@ -31,6 +34,8 @@ show ip dhcp snooping database
 ```
 
 DAI (Dynamic arp inspection)
+Dynamic ARP inspection (DAI) is a security feature that rejects invalid and malicious ARP packets. The feature prevents a class of man-in-the-middle attacks, where an unfriendly station intercepts traffic for other stations by poisoning the ARP caches of its unsuspecting neighbors. The miscreant sends ARP requests or responses mapping another station’s IP address to its own MAC address.
+DAI relies on DHCP snooping
 
 ```
 ip arp inspection vlan 1

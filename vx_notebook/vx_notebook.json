@@ -32,34 +32,39 @@
             "path": "CCNA/1-22_EXAM/encryption.md"
         },
         {
-            "last_accessed_time": "2021-11-19T03:58:11Z",
-            "line_number": 68,
+            "last_accessed_time": "2021-11-22T02:45:19Z",
+            "line_number": 160,
             "path": "CCNA/1-22_EXAM/ipv6.md"
         },
         {
-            "last_accessed_time": "2021-11-19T03:58:11Z",
+            "last_accessed_time": "2021-11-22T02:45:19Z",
             "line_number": 53,
             "path": "CCNA/1-22_EXAM/WIRELESS.md"
         },
         {
-            "last_accessed_time": "2021-11-19T03:58:11Z",
-            "line_number": 76,
+            "last_accessed_time": "2021-11-22T02:45:19Z",
+            "line_number": 65,
             "path": "CCNA/1-22_EXAM/ACL.md"
         },
         {
-            "last_accessed_time": "2021-11-19T03:58:11Z",
-            "line_number": 28,
+            "last_accessed_time": "2021-11-22T02:45:19Z",
+            "line_number": 11,
             "path": "CCNA/1-22_EXAM/CCNA_security.md"
         },
         {
-            "last_accessed_time": "2021-11-19T03:58:11Z",
-            "line_number": 40,
+            "last_accessed_time": "2021-11-22T02:45:19Z",
+            "line_number": -1,
             "path": "CCNA/1-22_EXAM/DHCP.md"
         },
         {
-            "last_accessed_time": "2021-11-19T03:58:11Z",
-            "line_number": 8,
+            "last_accessed_time": "2021-11-22T02:45:19Z",
+            "line_number": 13,
             "path": "CCNA/1-22_EXAM/syslog_ntp.md"
+        },
+        {
+            "last_accessed_time": "2021-11-22T02:45:19Z",
+            "line_number": 31,
+            "path": "CCNA/1-22_EXAM/NAT.md"
         }
     ],
     "image_folder": "vx_images",

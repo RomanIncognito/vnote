@@ -165,6 +165,18 @@ rules or as a random value.
 ![](vx_images/253604326931751.png)
 
 
+what is the node solicited multicast address for the IPV6 address b::54e1:daa1/64, Hint: RFC defined range is FF02::1::FF ?
+FF02::1:FFe1:daa1
+
+What is the EUI- 64 based address for given MAC address 0090:2716:FD0F and IPV6 prefix - 2001:DB8::/64?
+2001:DB8::0290:27FF:FE16:FD0F/64
+
+A BSS can be connected to a production network via the Distribution System
+true
+
+The Cisco AP mode – ‘FlexConnect’ Allows dynamic flipping between SSID and VLAN when WLC is down
+true
+
 
 
 

@@ -112,10 +112,22 @@ access-list 150 deny ip any host 172.22.242.23
 access-list 150 permit ip any host 172.22.242.17
 access-list 150 deny any any 
 
+Which of the following are typical functions of TCP?
+Multiplexing using port numbers
 
+What do you call data that includes the Layer 4 protocol header, and data given to Layer 4 by the upper layers, not including any headers and trailers from Layers 1 to 3?
+Segment
 
+Which of the following answers list a valid number that can be used with standard numbered IP ACLs?
+99
 
+ An engineer configures an ACL but forgets to save the configuration. At that point, which of the following commands display the configuration of an IPv4 ACL, including line numbers?
+` show ip access-lists`
 
+Which of the following answers list a valid number that can be used with extended numbered IP ACLs?
+190
 
-
-
+ An autonomous AP will be configured to support three WLANs that correspond to three VLANs. The AP will connect to the network over which one of the following?
+ Trunk mode link
+ 
+ 

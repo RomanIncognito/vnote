@@ -1,4 +1,6 @@
 # CCNA_security
+security concepts (threats, vulnerabilities, exploits, mitigation techniques
+
 Password alternatives - multifactor authentication, certificates, and biometrics
 
 Security pyramid - Integrity, avaialbility, confidentiality.
@@ -32,7 +34,15 @@ Switchport Security
 • Ability to control access to a switchport
 • Filtering based on source MAC address
 
-Switchport Security types: static, dynamic, sticky.
+Switchport Security types: 
+• Static port security – You (yes, you) configure the MAC address that is acceptable on a port
+• Dynamic port security – Let the device learn MAC addresses on a port. 
+• Sticky port security – A type of dynamic learning port security, but once the MAC address is learned, it “sticks” in the running-config
+
+Violation 
+• Protect:  Drops packets with unknown source addresses until you remove enough secure MAC addresses to drop below the configured maximum
+• Restrict: Same as protect, but it generates a log message
+• Shutdown: • Default mode • Puts the port in an err-disabled st
 
 Switchport Security violation: how switch reacts in the viations of established limits: protect, resctrict, shutdown (err-disable state).
 
@@ -71,6 +81,11 @@ Last Source Address        :0000.0000.0401
 Security Violation Count   :0
 ```
 
+Which of the following is required when configuring port security with sticky learning?
+Enabling port security with the switchport port-security interface subcommand.
 
+The show port-security interface f0/1 command lists a port status of secure-down. Which one of the following answers must be true about this interface at this time?
+The show interface status command lists the interface status as err-disabled.
 
-
+Command to check/show port security:
+Show port-security interface Interface_ID
