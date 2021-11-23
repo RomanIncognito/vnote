@@ -69,6 +69,14 @@ R1(config-if)# ip nat inside
 R1(config-if)# interface serial0/0
 R1(config-if)# ip nat outside 
 ```
+One can also create pool for PAT:
+ip access-list standard RUFFLES
+permit 10.1.1.0 0.0.0.255
+exit
+ip nat pool DORITOS 170.168.2.3 170.168.2.4 netmask 255.255.255.0
+ip nat inside source list RUFFLES pool DORITOS overload
+
+
 
 
 
