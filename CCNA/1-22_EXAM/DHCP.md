@@ -46,7 +46,7 @@ ip arp inspection validate src-mac {dst-mac ip}
 
 ```
 
-
+gratuitous ARP is ARP Reply message router sends it without first receiving an ARP Request.
 
 
 
