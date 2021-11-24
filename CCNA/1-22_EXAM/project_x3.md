@@ -1,4 +1,7 @@
 # project_x3
+
+![](vx_images/88240203816917.png)
+
 VLAN 1200 - /21  27.27.248.0/27
 VLAN 500 - /23   27.28.0.0/23
 VLAN 200 - /24   27.28.2.0/24
@@ -99,6 +102,11 @@ switchport trunk
 switchport trunk allowed 1,500
 switchport trunk allowed vlan add 1200 # need to add 1200 separately
 
+-------The newer Cisco switches only support dot1Q encapsulation. 
+-------You do not need to do anything because it is already configured that way.
+-----Older Cisco switches could support switchport trunk encapsulation isl or switchport trunk encapsulation dot1Q,
+-------but newer switches do not need the switchport trunk encapsulation command because they only support the 802.1Q trunking.
+  
 interface gi0/1
 ip address 27.28.3.2 255.255.255.252
 exit
