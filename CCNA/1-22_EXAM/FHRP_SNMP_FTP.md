@@ -74,6 +74,41 @@ FTP AUTH command - ftp client command to initiated ftps
 TFTP uses UDP 69. 
 TFTP CANNOT change dir. , create dir., list files. 
 
++++++++++++++++QoS+++++++++++++++++++
+Bandwidth - speed of a link
+Delay - time a packet takes to go from source tp destination and back
+Jitter - defference in time of a series of packets being received at destination.
+Loss - percentage of packets lost in the transit.
+QoS allows you to choose with traffic should be prioritized. 
+
+Fields that used for filtring:
+ip header: protocol, source ip, destination ip
+tcp header: source port, destination port.
+
+224.0.0.2 - all routers multycast address.
+
+
+++++++++++++IOS upgrade+++++++++
+10.0.0.1 # running ios 12
+enable
+copy running-config tftp # 
+
+copy tftp flash: # copy from tftp
+
+confgire t
+boot system flash:C2600-advipservice9-mz.124.15.bin
+reload 
+
+dir flash:
+show version # to check which file is reference during loading
+
+10.0.0.3 ios 15
+enable 
+show version
+license boot ............................. # to activate add-ons on the ios 15-16
+
+
+
 
 
 

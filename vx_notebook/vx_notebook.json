@@ -37,11 +37,6 @@
             "path": "CCNA/1-22_EXAM/DHCP.md"
         },
         {
-            "last_accessed_time": "2021-11-24T02:00:49Z",
-            "line_number": -1,
-            "path": "CCNA/1-22_EXAM/project_x3.md"
-        },
-        {
             "last_accessed_time": "2021-11-24T03:44:39Z",
             "line_number": 160,
             "path": "CCNA/1-22_EXAM/ipv6.md"
@@ -72,14 +67,24 @@
             "path": "CCNA/1-22_EXAM/NAT.md"
         },
         {
-            "last_accessed_time": "2021-11-24T03:44:39Z",
-            "line_number": 171,
+            "last_accessed_time": "2021-11-24T22:52:40Z",
+            "line_number": 144,
             "path": "CCNA/1-22_EXAM/project_x2.md"
         },
         {
-            "last_accessed_time": "2021-11-24T03:44:39Z",
-            "line_number": -1,
+            "last_accessed_time": "2021-11-24T22:52:40Z",
+            "line_number": 110,
             "path": "CCNA/1-22_EXAM/FHRP_SNMP_FTP.md"
+        },
+        {
+            "last_accessed_time": "2021-11-24T22:52:40Z",
+            "line_number": -1,
+            "path": "CCNA/1-22_EXAM/project_x3.md"
+        },
+        {
+            "last_accessed_time": "2021-11-24T22:52:40Z",
+            "line_number": 0,
+            "path": "CCNA/1-22_EXAM/cables.md"
         }
     ],
     "image_folder": "vx_images",
