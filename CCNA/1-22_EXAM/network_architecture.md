@@ -89,12 +89,44 @@ Quality of Service (QoS)
 No WAN SLA
 
 
+++++++++++++++++++++WAN++++++++++++++++++++++++++
 
+ Metro Ethernet network is a metropolitan area network that is based on Ethernet standards. It is commonly used to connect subscribers to a larger service network
+ 
+Point of presence - location of service provider.
+User network interface - UNI - demarcation point between the responsibility of the service provider and the responsibility of the subscriber.
 
+![](vx_images/84213217259396.png)
 
+![](vx_images/572353399816919.png)
 
+Multiprotocol Label Switching (MPLS) -  is data forwarding technology that increases the speed and controls the flow of network traffic.
+With MPLS, data is directed through a path via labels instead of requiring complex lookups in a routing table at every stop.
 
+While MPLS VPNs provide a Layer 3 service to customers, MPLS itself is sometimes called a Layer 2.5 protocol 
+because it adds the MPLS header between the data-link header (Layer 2) and the IP header (Layer 3).
 
+Customer Edge CE - router of the client of the MPLS Service Provider
+Provider Edge PE - device the sits on the edge of the SP.
+
+![](vx_images/220025810606011.png)
+
+route redistribution - tranfer routes from one ruoting protocol to another.
+MPLS uses Multiprotocol BGP (MPBGP).
+
+digital subscriber line (DSL) - 
+
+VPNs can provide important security features, such as the following:
+■ Confidentiality (privacy): Preventing anyone in the middle of the Internet (man in the
+middle) from being able to read the data
+■ Authentication: Verifying that the sender of the VPN packet is a legitimate device and
+not a device used by an attacker
+■ Data integrity: Verifying that the packet was not changed as the packet transited the
+Internet
+■ Anti-replay: Preventing a man in the middle from copying and later replaying the pack-
+ets sent by a legitimate user, for the purpose of appearing to be a legitimate user
+
+ IPsec is protocol that often used to set up VPNs, and it works by encrypting IP packets, along with authenticating the source where the packets come from.
 
 
 
