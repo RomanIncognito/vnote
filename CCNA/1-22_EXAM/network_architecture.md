@@ -117,10 +117,8 @@ MPLS uses Multiprotocol BGP (MPBGP).
 digital subscriber line (DSL) - 
 
 VPNs can provide important security features, such as the following:
-■ Confidentiality (privacy): Preventing anyone in the middle of the Internet (man in the
-middle) from being able to read the data
-■ Authentication: Verifying that the sender of the VPN packet is a legitimate device and
-not a device used by an attacker
+■ Confidentiality (privacy): Preventing anyone in the middle of the Internet (man in the middle) from being able to read the data
+■ Authentication: Verifying that the sender of the VPN packet is a legitimate device and not a device used by an attacker
 ■ Data integrity: Verifying that the packet was not changed as the packet transited the
 Internet
 ■ Anti-replay: Preventing a man in the middle from copying and later replaying the pack-
