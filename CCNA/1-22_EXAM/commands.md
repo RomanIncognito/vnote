@@ -406,6 +406,92 @@ IOS upgrade (15,  16)
 works with add-ons
 license boot module c3900 techlogy-package data
 
+**GRE TUNNEL**
+
+```
+R1
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+interface tunnel 0
+ip address 10.0.0.1 255.255.255.252
+tunnel mode gre ip
+tunnel source s0/0/0
+tunnel destination 200.0.0.10
+exit
+router eigrp 100
+eigrp router-id 1.1.1.1
+no auto-summary
+network 192.168.1.0 network 10.0.0.0
+
+R2
+ip route 0.0.0.0 0.0.0.0 s0/0/1
+int tunnel 0
+ip address 10.0.0.2 255.255.255.252
+tunnel mode gre ip
+tunnel source S0/0/1
+tunnel destination 120.0.0.1
+exit
+router eigrp
+eigrp router-id 5.5.5.5
+no auto-summary
+network 192.168.5.0
+network 10.0.0.0
+```
+
+
+WAN REDISTRIBUTION
+
+```
+R1
+router eigrp 200
+no auto-summary
+network 172.12.12.0 
+network 192.168.11.0
+network 192.168.12.0
+
+R2
+en
+config t
+router eigrp 200
+network 172.12.12.0 0.0.0.255 
+network 172.16.23.0 0.0.0.255
+exit
+router ospf 2 
+router-id 2.2.2.2
+network 172.12.12.0 0.0.0.255 area 0
+network 172.16.23.0 0.0.0.255 area 0
+end
+
+++++++++++++++++R3++++++++++++++++
++area border router (ABR)
+
+router ospf 3
+router-id 3.3.3.3
+network 172.16.23.0 0.0.0.255 area 0
+network 192.168.31.0 0.0.0.0 area 0
+network 192.168.32.0 0.0.0.0 area 0
+
+network 172.16.34.0 0.0.0.255 area 51
+network 192.168.38.0. 0.0.0.255 area 51
+network 192.168.39.0. 0.0.0.255 area 51
+
+copy run star
+
++++++++++++++R4+++++++++
+router ospf 4
+router-id 4.4.4.4
+network 172.16.34.0 0.0.0.255 area 51
+network 192.168.41.0.0.0.255 area 51
+network 192.168.42.0.0.0.255 area 51
+end
+copy run star
+
++++++++++++++R2+++++++++++
+router ospf 2
+redistribute eigrp 200 metric 100 metric-type 1 subnets
+
+router eigrp 200
+resitribute ospf 2 metrixc 50 33 255 1 1500
+```
 
 
 
