@@ -4,14 +4,13 @@ In 802.11 WLAN all the hosts must operate in half-duplex mode.
 
 At the most basic level, there is no control over the number of devices that can transmit and receive frames.
 
-basic service set (BSS) is a wireless access point (AP). 
+basic service set (BSS) is a collection of wireless stations/nodes that are connected to the same wireless access point (AP). 
 BSS identifier (BSSID) that is based on the AP’s own radio MAC address.
+BSSID -  is the MAC address of the access point radio for that service set. 
 
 AP - An access point is a device that creates a wireless local area network and acts as a portal for devices to connect.
 
 SSID - means (Service Set Identifier) and represents the name of your wireless network in string format in, most likely, use of ascii characters only. 
-
-BSSID -  is the MAC address of the access point radio for that service set. 
 
 A wireless distribution system (WDS) is a system enabling the wireless interconnection of access points in  802.11 network.
 
