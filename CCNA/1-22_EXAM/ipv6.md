@@ -18,8 +18,7 @@ Network Address Translation (NAT) and classless interdomain routing (CIDR) helpe
 OSPF version 3, was created to support IPv6.
 
 Two basic rules let you, or any computer, shorten or abbreviate an IPv6 address:
-    1. Inside each quartet of four hex digits, remove the leading 0s (0s on the left side of the   
-        quartet) in the three positions on the left. (Note: at this step, a quartet of 0000 will
+    1. Inside each quartet of four hex digits, remove the leading 0s (0s on the left side of the quartet) in the three positions on the left. (Note: at this step, a quartet of 0000 will
         leave a single 0.)
     2. Find any string of two or more consecutive quartets of all hex 0s, and replace that
         set of quartets with a double colon (::). The :: means “two or more quartets of all 0s.”

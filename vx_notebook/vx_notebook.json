@@ -57,11 +57,6 @@
             "path": "CCNA/1-22_EXAM/commands.md"
         },
         {
-            "last_accessed_time": "2021-12-01T04:13:24Z",
-            "line_number": -1,
-            "path": "CCNA/1-22_EXAM/ipv6.md"
-        },
-        {
             "last_accessed_time": "2021-12-01T05:00:20Z",
             "line_number": -1,
             "path": "CCNA/1-22_EXAM/project_x3.md"
@@ -75,16 +70,6 @@
             "last_accessed_time": "2021-12-01T05:00:32Z",
             "line_number": 4,
             "path": "CCNA/1-22_EXAM/GRE.md"
-        },
-        {
-            "last_accessed_time": "2021-12-01T23:18:48Z",
-            "line_number": 14,
-            "path": "CCNA/1-22_EXAM/WIRELESS.md"
-        },
-        {
-            "last_accessed_time": "2021-12-01T23:56:11Z",
-            "line_number": -1,
-            "path": "CCNA/1-22_EXAM/project_x6.md"
         },
         {
             "last_accessed_time": "2021-12-01T23:56:13Z",
@@ -109,16 +94,6 @@
         {
             "last_accessed_time": "2021-12-02T03:32:02Z",
             "line_number": -1,
-            "path": "CCNA/1-22_EXAM/1-21.md"
-        },
-        {
-            "last_accessed_time": "2021-12-02T03:32:02Z",
-            "line_number": 0,
-            "path": "CCNA/1-22_EXAM/IPV6_OSPF.md"
-        },
-        {
-            "last_accessed_time": "2021-12-02T03:32:02Z",
-            "line_number": -1,
             "path": "CCNA/1-22_EXAM/project_x5.md"
         },
         {
@@ -137,9 +112,44 @@
             "path": "CCNA/1-22_EXAM/NAT.md"
         },
         {
-            "last_accessed_time": "2021-12-02T03:32:02Z",
-            "line_number": 37,
+            "last_accessed_time": "2021-12-02T19:30:01Z",
+            "line_number": 197,
             "path": "CCNA/1-22_EXAM/commands.md"
+        },
+        {
+            "last_accessed_time": "2021-12-02T19:30:01Z",
+            "line_number": 203,
+            "path": "CCNA/1-22_EXAM/IPV6_OSPF.md"
+        },
+        {
+            "last_accessed_time": "2021-12-02T19:30:01Z",
+            "line_number": 14,
+            "path": "CCNA/1-22_EXAM/WIRELESS.md"
+        },
+        {
+            "last_accessed_time": "2021-12-02T19:30:01Z",
+            "line_number": 84,
+            "path": "CCNA/1-22_EXAM/1-21.md"
+        },
+        {
+            "last_accessed_time": "2021-12-02T19:30:01Z",
+            "line_number": 33,
+            "path": "CCNA/1-22_EXAM/ipv6.md"
+        },
+        {
+            "last_accessed_time": "2021-12-02T19:30:01Z",
+            "line_number": -1,
+            "path": "CCNA/1-22_EXAM/project_x6.md"
+        },
+        {
+            "last_accessed_time": "2021-12-02T19:30:01Z",
+            "line_number": 0,
+            "path": "CCNA/1-22_EXAM/template.md"
+        },
+        {
+            "last_accessed_time": "2021-12-02T19:30:01Z",
+            "line_number": 463,
+            "path": "CCNA/1-22_EXAM/project_x7_everything.md"
         }
     ],
     "image_folder": "vx_images",
