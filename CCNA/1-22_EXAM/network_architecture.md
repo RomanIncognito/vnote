@@ -71,11 +71,12 @@ those services to consumers in other companies.
 
 Infrastructure as a Service (IaaS) - cloud provider starts the VM, which boots the chosen OS. Most flexiable. 
 
+Platform as a Service (PaaS) - delivers a framework for developers that they can build upon and use to create customized applications.
+Developers can concentrate on building the software without having to worry about operating system
+
 With Software as a Service (SaaS) - he consumer receives a service with working software.
 Meaning customer has no access to alter OS or hardware setting. 
 
-Platform as a Service (PaaS) - delivers a framework for developers that they can build upon and use to create customized applications.
-Developers can concentrate on building the software without having to worry about operating system
 
 Pros cloud :
 Agility

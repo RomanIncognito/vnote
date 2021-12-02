@@ -63,7 +63,7 @@ FTP uses TCP
 
 The commands that flow over this initial TCP connection—called the FTP control connection (port 21).
 FTP reserves two well-known ports: port 21 for control connections and port 20 for data connections.
-Active mode (FTP PORT command) it's when both connection is initiated by client, but data session - by server.
+Active mode (FTP PORT command) it's when both connections are initiated by client, but data session - by server.
 Meaning data session might be blocked by firewall in the client side. 
 Passive mode (FTP PASV command) helps solve the firewall restrictions by requesting from the server 2-d port 
 for data exchange by client and initiating data connection by client as well.
@@ -106,25 +106,3 @@ show version # to check which file is reference during loading
 enable 
 show version
 license boot ............................. # to activate add-ons on the ios 15-16
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
