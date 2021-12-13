@@ -69,5 +69,91 @@ generates a public and private key for the server, just like you did for your us
 possesses the corresponding private key. If you do not have its public key, then your computer will ask for it and add it into the known_hosts file. If you have the key, and it matches, 
 then you connect straight away. If the keys do not match, then you get a big nasty warning. This is where things get interesting. The 3 situations that a key mismatch typically happens are:
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+**PORT_FORWARDING_PORT_FORWARDING_PORT_FORWARDING_PORT_FORWARDING_PORT_FORWARDING_PORT_FORWARDING**
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+What is SSH tunneling and reverse port forwarding?
+
+Introduction
+
+SSH tunnel consists of an encrypted tunnel which is created through a SSH protocol. This tunnel can be used to transfer unencrypted traffic through an encrypted channel over the network. For example we can use a SSH tunnel to securely transfer files.
+
+SSH tunnels are also used for bypassing firewalls that deny certain internet services.
+Port Forwarding
+
+SSH tunnels can be created in various ways depending on which type of port forwarding is used:
+There are three types of port forwarding:
+
+    Local port forwarding
+    Remote port forwarding
+    Dynamic port forwarding
+
+Tunnelling with Local port forwarding
+
+Lets say, yahoo.com is being blocked using a proxy filter at your college. An SSH tunnel can be used to bypass this restriction. Let’s give name to my machine at college as “college-pc” and my home machine as “home-pc” (SSH server should be running on “home-pc”)
+To create the SSH tunnel that is executed from “college-pc” use the below command:
+`ssh -L 9090:facebook.com:80 <user>@home-pc`
+-L indicates that this is local port forwarding
+Now SSH client at college-pc is connected to SSH server running at “home-pc”.
+ This is also binding port 9090 of college-pc to listen to all local requests thus creating an SSH tunnel between “college-pc” and “home-pc”.
+ 
+At the home-pc side, It will create a connection to yahoo.com at port 80. home-pc will think of how to connect to yahoo rather than college-pc.
+
+![](vx_images/79432118259483.png)
+
+Now we can browse yahoo.com at work using localhost:9090
+The home-pc will act as a gateway.
+Reverse Tunnelling with remote port forwarding
+
+Let’s say you want to connect to an internal university website from the home-pc system.
+
+The university firewall will block its incoming traffic. We have to use SSH reverse tunnelling here.
+`ssh -R 9090:intra-site.com:80 <user>@home-pc (Executed from college-pc)`
+We will use the option -R for reverse tunneling.
+Once done, The SSH client at college-pc will connect to the SSH server running at home-pc. Then the server will bind port 9090 on home-pc to listen to all incoming requests.
+By visiting localhost:9090 at home-pc, the college-pc will create a connection to the internal site and give back the response to home-pc via the created SSH channel.
+
+![](vx_images/227932300817006.png)
+
+![another illustration of remote port forwarding](vx_images/39455310606098.png)
 
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+DYNAMIC PORT FORWARDING
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Dynamic port forwarding turns your SSH client into a SOCKS proxy server. 
+SOCKS is a little-known but widely-implemented protocol for programs to request any Internet connection through a proxy server. 
+Each program that uses the proxy server needs to be configured specifically, and reconfigured when you stop using the proxy server.
+
+For example, say you wanted Firefox to connect to every web page through your SSH server. First you would use dynamic port forwarding with the default SOCKS port:
+
+ssh -C -D 1080 192.168.100.133
+
+The -D option specifies dynamic port forwarding. 1080 is the standard SOCKS port. Although you can use any port number, some programs will only work if you use 1080. 
+-C enables compression, which speeds the tunnel up when proxying mainly text-based information (like web browsing), 
+but can slow it down when proxying binary information (like downloading files).
+
+Next you would tell Firefox to use your proxy:
+
+    go to Edit -> Preferences -> Advanced -> Network -> Connection -> Settings...
+    check "Manual proxy configuration"
+    make sure "Use this proxy server for all protocols" is cleared
+    clear "HTTP Proxy", "SSL Proxy", "FTP Proxy", and "Gopher Proxy" fields
+    enter "127.0.0.1" for "SOCKS Host"
+    enter "1080" (or whatever port you chose) for Port. 
+
+You can also set Firefox to use the DNS through that proxy, so even your DNS lookups are secure:
+
+    Type in about:config in the Firefox address bar
+    Find the key called "network.proxy.socks_remote_dns" and set it to true 
+
+The SOCKS proxy will stop working when you close your SSH session. You will need to change these settings back to normal in order for Firefox to work again.
+
+To make other programs use your SSH proxy server, you will need to configure each program in a similar way.
+
+TO TEST IT , USE ITERNAL IP TO ACCESS INTERNAL WEB-SERVER FROM THE BROWSER:
+
+10.0.0.10:80
+10.0.0.11:80

