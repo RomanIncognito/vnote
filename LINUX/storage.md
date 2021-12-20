@@ -128,3 +128,4 @@ RAID-4: Disk striping with parity adds a parity bit stored on a separate disk so
 RAID-5: Disk striping with distributed parity adds a parity bit to the data stripe so that it appears on all of the disks so that any failed disk can be recovered.
 RAID-6: Disk striping with double parity stripes both the data and the parity bit so two failed drives can be recovered.
 
+something
