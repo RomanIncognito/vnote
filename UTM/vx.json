@@ -1,0 +1,17 @@
+{
+    "created_time": "2022-01-31T13:36:37Z",
+    "files": [
+    ],
+    "folders": [
+        {
+            "name": "FORTIGATE"
+        },
+        {
+            "name": "SOPHOS"
+        }
+    ],
+    "id": "42",
+    "modified_time": "2022-01-31T13:36:37Z",
+    "signature": "784285914933749221",
+    "version": 3
+}
