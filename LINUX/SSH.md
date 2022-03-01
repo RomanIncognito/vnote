@@ -1,5 +1,10 @@
 # SSH
 
+Generation of sectet key (symetric ) key that is used to encrypt connection (Diffie-Hellman algorithm):
+https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process
+
+![dh-revised](vx_images/372864814614990.png)
+
 Linux has standard folders/files for SSH:
 
     The SSH files are stored in "~/.ssh"
